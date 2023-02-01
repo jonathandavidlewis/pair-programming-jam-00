@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/PlayerChar.tscn" type="PackedScene" id=1]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0.027933, 1 )
+colors = PoolColorArray( 0, 0.54902, 0.0588235, 1, 0, 0.54902, 0.0588235, 0.74902 )
+
+[sub_resource type="GradientTexture2D" id=2]
+gradient = SubResource( 1 )
+
+[node name="Main" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 129, 121 )
+texture = SubResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 240 )
+
+[node name="PlayerChar" parent="." instance=ExtResource( 1 )]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://asset/diamond.png" type="Texture" id=1]
+[ext_resource path="res://src/PlayerChar.gd" type="Script" id=2]
+
+[node name="PlayerChar" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 13, 15 )
+texture = ExtResource( 1 )
