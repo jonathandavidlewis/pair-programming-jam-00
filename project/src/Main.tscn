@@ -18,3 +18,4 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 256, 240 )
 
 [node name="PlayerChar" parent="." instance=ExtResource( 1 )]
+position = Vector2( 28, 27 )
