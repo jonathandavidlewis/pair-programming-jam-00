@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/PlayerChar.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Node2DDie.tscn" type="PackedScene" id=2]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0.027933, 1 )
@@ -19,3 +20,6 @@ region_rect = Rect2( 0, 0, 256, 240 )
 
 [node name="PlayerChar" parent="." instance=ExtResource( 1 )]
 position = Vector2( 28, 27 )
+
+[node name="Node2DDie" parent="." instance=ExtResource( 2 )]
+position = Vector2( 76, 39 )
