@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/PlayerChar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Node2DDie.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/WallStaticBody2D.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0.027933, 1 )
@@ -19,10 +20,18 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 256, 240 )
 
 [node name="PlayerChar" parent="." instance=ExtResource( 1 )]
-position = Vector2( 28, 27 )
+position = Vector2( 43, 47 )
 
 [node name="Node2DDie" parent="." instance=ExtResource( 2 )]
 position = Vector2( 76, 39 )
 
 [node name="Node2DDie2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 76, 39 )
+position = Vector2( 76, 55 )
+
+[node name="WallStaticBody2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 76, 15 )
+scale = Vector2( 1, 2 )
+
+[node name="WallStaticBody2D2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 76, 167 )
+scale = Vector2( 1, 13 )
