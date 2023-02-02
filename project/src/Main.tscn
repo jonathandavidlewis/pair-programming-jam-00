@@ -23,3 +23,6 @@ position = Vector2( 28, 27 )
 
 [node name="Node2DDie" parent="." instance=ExtResource( 2 )]
 position = Vector2( 76, 39 )
+
+[node name="Node2DDie2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 76, 39 )
