@@ -10,6 +10,7 @@ func _ready() -> void:
 func _on_goal_completed(goal_slug) -> void:
 	goals[goal_slug] = true
 	if all_goals_complete():
+		# TODO: What do we do when ALL goals are complete?
 		Signals.emit_signal("all_goals_completed")
 		print("ALL GOALS COMPLETE")
 	print(goal_slug)

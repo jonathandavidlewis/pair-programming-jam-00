@@ -1,0 +1,9 @@
+[gd_scene format=2]
+
+[node name="GameDialog" type="Label"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 149.0
+margin_bottom = 31.0
+text = "You completed the level!"
+autowrap = true
