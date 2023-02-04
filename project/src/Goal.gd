@@ -5,5 +5,4 @@ func _ready() -> void:
 
 
 func _on_Goal_body_entered(body:Node) -> void:
-	Signals.emit_signal("goal_complete", self.name)
-	print ("goal body entered")
+	Signals.emit_signal("goal_completed", self.name)
