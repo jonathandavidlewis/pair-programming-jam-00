@@ -5,4 +5,5 @@ func _ready() -> void:
 
 
 func _on_Goal_body_entered(body:Node) -> void:
-	Signals.emit_signal("goal_completed", self.name)
+	if body.is_in_group("Player"):
+		Signals.emit_signal("goal_completed", self.name)

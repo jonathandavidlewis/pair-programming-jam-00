@@ -3,7 +3,7 @@
 [ext_resource path="res://asset/diamond.png" type="Texture" id=1]
 [ext_resource path="res://src/PlayerChar.gd" type="Script" id=2]
 
-[node name="PlayerChar" type="KinematicBody2D"]
+[node name="PlayerChar" type="KinematicBody2D" groups=["Player"]]
 script = ExtResource( 2 )
 MAX_VELOCITY = 5000
 
