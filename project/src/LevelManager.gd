@@ -6,7 +6,7 @@ func _ready():
 
 func _on_level_completed(level_slug):
 	print("Going to load a new level now...")
-	load_level(level_slug)
+	load_level("src/" + level_slug)
 	pass
 
 func load_level(name) -> void:
