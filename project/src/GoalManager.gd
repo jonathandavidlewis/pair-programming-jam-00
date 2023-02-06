@@ -1,5 +1,6 @@
 extends Node
 
+export(String) var next_level = "Level000.tscn"
 var goals := {}
 
 func _ready() -> void:
