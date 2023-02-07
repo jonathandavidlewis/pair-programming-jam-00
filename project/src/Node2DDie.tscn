@@ -10,6 +10,7 @@ rough = true
 extents = Vector2( 8, 8 )
 
 [node name="Die" type="RigidBody2D" groups=["Die"]]
+z_index = -1
 collision_layer = 3
 collision_mask = 3
 physics_material_override = SubResource( 2 )

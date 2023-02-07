@@ -18,6 +18,7 @@ func _on_Area2D_area_entered(area:Area2D) -> void:
 		call_deferred("disable_colider")
 		global_rotation_degrees = hole_rot
 		global_translate(offset)
-		
+		z_index = -2
+
 func disable_colider() -> void:
 	COLLIDER.disabled = true
