@@ -25,16 +25,13 @@ func _on_all_goals_completed():
 func _on_popup_hidden():
 	close_dialog()	
 
-func show_end_level():
-	open_dialog("LevelComplete")
-	
 func open_dialog(name = "LevelComplete", on_close_signal = ""):
 	on_close_signal_name = on_close_signal
 	get_tree().paused = true
 	print(DIALOG_CONTAINER)
 	DIALOG_CONTAINER.text = dialogs[name]
 	DIALOG_POPUP.popup()
-	
+		
 func close_dialog():
 	get_tree().paused = false
 	DIALOG_POPUP.visible = false
@@ -42,6 +39,9 @@ func close_dialog():
 		Signals.emit_signal(on_close_signal_name)
 	else:
 		Signals.emit_signal(on_close_signal_name, level)
+				
+func show_end_level():
+	open_dialog("LevelComplete")
 
 func create_dialogs_dict(dialogs) -> Dictionary:
 	var dialogs_dict = {}

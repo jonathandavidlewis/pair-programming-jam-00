@@ -12,3 +12,10 @@ polygon = PoolVector2Array( 6, 1, 1, 7, -6, 1, 1, -7 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( 6, 1, 1, 7, -6, 1, 1, -7 )
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
