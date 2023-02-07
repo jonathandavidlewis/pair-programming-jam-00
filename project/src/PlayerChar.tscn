@@ -8,7 +8,7 @@ script = ExtResource( 2 )
 MAX_VELOCITY = 5000
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 6, 1, 1, 7, -6, 1, 1, -7 )
+polygon = PoolVector2Array( 7, 0, 0, 7, -7, 0, 0, -7 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -16,6 +16,6 @@ texture = ExtResource( 1 )
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PoolVector2Array( 6, 1, 1, 7, -6, 1, 1, -7 )
+polygon = PoolVector2Array( 7, 0, 0, 7, -7, 0, 0, -7 )
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
