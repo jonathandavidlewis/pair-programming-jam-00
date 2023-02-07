@@ -9,11 +9,12 @@
 [ext_resource path="res://src/GameDialog.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Gradient" id=1]
-offsets = PoolRealArray( 0.027933, 1 )
-colors = PoolColorArray( 0, 0.54902, 0.0588235, 1, 0, 0.54902, 0.0588235, 0.74902 )
+colors = PoolColorArray( 0.172256, 0.621094, 0.220346, 1, 0.0306091, 0.460938, 0.0767157, 0.74902 )
 
 [sub_resource type="GradientTexture2D" id=2]
 gradient = SubResource( 1 )
+fill_from = Vector2( 0.1375, 0.1 )
+fill_to = Vector2( 0.575, 0.745833 )
 
 [sub_resource type="GDScript" id=3]
 script/source = "extends Node
