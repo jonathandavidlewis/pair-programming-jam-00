@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/PlayerChar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Node2DDie.tscn" type="PackedScene" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://src/ProtypeTileSet.tres" type="TileSet" id=4]
 [ext_resource path="res://src/GoalArea.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/DialogManager.gd" type="Script" id=6]
-[ext_resource path="res://src/Dialog.gd" type="Script" id=7]
 [ext_resource path="res://src/GameDialog.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Gradient" id=1]
@@ -37,7 +36,6 @@ rect_clip_content = true
 
 [node name="Dialog" type="Control" parent="DialogManager/PopupDialog"]
 visible = false
-script = ExtResource( 7 )
 
 [node name="LevelComplete" parent="DialogManager/PopupDialog/Dialog" instance=ExtResource( 8 )]
 
@@ -63,10 +61,10 @@ region_rect = Rect2( 0, 0, 256, 240 )
 position = Vector2( 43, 47 )
 
 [node name="Node2DDie" parent="." instance=ExtResource( 2 )]
-position = Vector2( 76, 39 )
+position = Vector2( 72, 40 )
 
 [node name="Node2DDie2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 76, 55 )
+position = Vector2( 72, 56 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 4 )
