@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/background-music-adventure-theme.mp3-9ae6eb8c4cb782b3315ca958aeb6a9a4.mp3str"
+
+[deps]
+
+source_file="res://asset/audio/background-music-adventure-theme.mp3"
+dest_files=[ "res://.import/background-music-adventure-theme.mp3-9ae6eb8c4cb782b3315ca958aeb6a9a4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
