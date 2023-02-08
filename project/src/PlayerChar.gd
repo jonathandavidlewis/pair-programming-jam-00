@@ -6,7 +6,6 @@ export(float) var DASH_MULTIPLIER := 3.5
 export(int) var DASH_ACCEL_MULT := 10
 export(float) var DASH_WAIT := 1.0
 
-var dashing := false
 var velocity := Vector2()
 var can_move := true
 var dash_timeout := false
