@@ -6,7 +6,7 @@
 
 [node name="PlayerChar" type="KinematicBody2D" groups=["Player"]]
 script = ExtResource( 2 )
-MAX_VELOCITY = 5000
+DASH_MULTIPLIER = 3.2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( 7, 0, 0, 7, -7, 0, 0, -7 )
