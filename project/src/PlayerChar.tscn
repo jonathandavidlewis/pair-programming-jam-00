@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://asset/diamond.png" type="Texture" id=1]
 [ext_resource path="res://src/PlayerChar.gd" type="Script" id=2]
+[ext_resource path="res://asset/audio/8bit_death_1.wav" type="AudioStream" id=3]
 
 [node name="PlayerChar" type="KinematicBody2D" groups=["Player"]]
 script = ExtResource( 2 )
@@ -17,5 +18,11 @@ texture = ExtResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PoolVector2Array( 7, 0, 0, 7, -7, 0, 0, -7 )
+
+[node name="Sound" type="Node" parent="."]
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource( 3 )
+volume_db = -12.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

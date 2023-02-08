@@ -8,8 +8,14 @@ export(float) var DASH_WAIT := 1.0
 
 var dashing := false
 var velocity := Vector2()
+var can_move := true
+
+onready var DEATH_SOUND = $Sound/DeathSound
+
 
 func _physics_process(delta: float) -> void:
+	if !can_move:
+		return
 	var target_velocity = get_input_direction() * MAX_VELOCITY
 	velocity = velocity.linear_interpolate(target_velocity, ACCELERATION * delta)
 	var motion = velocity * delta
@@ -62,4 +68,8 @@ func set_dashing(d: bool) -> void:
 	print("dashing...")
 
 func die() -> void:
+	DEATH_SOUND.play()
+	self.can_move = false
+	self.visible = false
+	yield(get_tree().create_timer(0.62), "timeout")
 	Signals.emit_signal("level_failed")
