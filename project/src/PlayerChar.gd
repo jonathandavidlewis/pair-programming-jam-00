@@ -19,9 +19,7 @@ func _physics_process(delta: float) -> void:
 	
 	var target_velocity = get_input_direction() * MAX_VELOCITY
 	set_velocity(target_velocity, ACCELERATION, delta)
-	
 	get_input_abilities(delta)
-	
 	velocity = move_and_slide(velocity)
 
 func _on_Area2D_area_entered(area:Area2D) -> void:
@@ -30,7 +28,11 @@ func _on_Area2D_area_entered(area:Area2D) -> void:
 
 func get_input_abilities(delta) -> void:
 	if Input.is_action_just_pressed("ui_accept") and can_dash():
-		set_dash_velocity(get_input_direction() * MAX_VELOCITY, ACCELERATION, delta)
+		dash(delta)
+
+func dash(delta):
+	set_dash_velocity(get_input_direction() * MAX_VELOCITY, ACCELERATION, delta)
+	disable_dashing()
 
 func get_input_direction() -> Vector2:
 	var input_direction = Vector2(0, 0)
@@ -43,35 +45,29 @@ func get_input_direction() -> Vector2:
 		input_direction.y -= 1
 	if Input.is_action_pressed("ui_down"):
 		input_direction.y += 1
-
+	
 	return input_direction.normalized()
 
 func can_dash() -> bool:
-
-	if dash_timeout == false:
-		return true
-	
-	return false
+	return !dash_timeout
 
 func set_dash_velocity(target_velocity, acceleration, delta) -> void:
-	set_dash_timer(true)
 	set_velocity(target_velocity * DASH_MULTIPLIER, acceleration * DASH_ACCEL_MULT, delta)
-
-func set_dash_timer(timer_state: bool) -> void:
 	
-	dash_timeout = timer_state
-
-	if timer_state == false:
-		print("you can't dash")
-		return
-
+func disable_dashing():
+	dash_timeout = true
+	set_dash_timeout()
+	
+func enable_dashing():
+	dash_timeout = false
+	
+func set_dash_timeout():
 	var dash_timer = Timer.new()
-	dash_timer.connect("timeout", self, "set_dash_timer", [false])
 	dash_timer.wait_time = DASH_WAIT
+	dash_timer.connect("timeout", self, "enable_dashing")
 	dash_timer.one_shot = true
 	add_child(dash_timer)
 	dash_timer.start()
-	print("dashing...")
 
 func set_velocity(target_velocity, acceleration, delta) -> void:
 	velocity = velocity.linear_interpolate(target_velocity, acceleration * delta)
