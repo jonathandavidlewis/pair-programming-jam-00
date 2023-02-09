@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
-export(int) var MAX_VELOCITY := 200
-export(float) var ACCELERATION := 5.0
-export(float) var DASH_MULTIPLIER := 3.5
-export(int) var DASH_ACCEL_MULT := 10
+export(int) var MAX_VELOCITY := 100
+export(float) var ACCELERATION := 3.0
+export(float) var DASH_MULTIPLIER := 12
+export(int) var DASH_ACCEL_MULT := 30
 export(float) var DASH_WAIT := 1.0
 
 var velocity := Vector2()
