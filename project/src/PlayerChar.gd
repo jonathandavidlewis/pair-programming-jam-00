@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 	
 	if get_input_abilities() == "dash" and can_dash():
 		DEATH_HIT_BOX.disabled = true
-		dash(target_velocity * DASH_MULTIPLIER, ACCELERATION * DASH_ACCEL_MULT, delta)
+		dash(DASH_DURRATION, target_velocity * DASH_MULTIPLIER, ACCELERATION * DASH_ACCEL_MULT, delta)
 
 	if !is_dashing():
 		DEATH_HIT_BOX.disabled = false
@@ -60,11 +60,11 @@ func can_dash() -> bool:
 func is_dashing() -> bool:
 	return dashing
 
-func dash(target_velocity, acceleration, delta) -> void:
+func dash(durration, target_velocity, acceleration, delta) -> void:
 	set_dashing(true)
 	set_velocity(target_velocity, acceleration, delta)
 	disable_dash()
-	set_dash_durration(DASH_DURRATION, "set_dashing", [false])
+	set_dash_durration(durration, "set_dashing", [false])
 
 func set_dashing(state: bool) -> void:
 	if state == true: 
