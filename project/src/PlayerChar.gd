@@ -67,10 +67,11 @@ func dash(durration, target_velocity, acceleration, delta) -> void:
 	set_dash_durration(durration, "set_dashing", [false])
 
 func set_dashing(state: bool) -> void:
-	if state == true: 
-		dashing = true
-	else:
-		dashing = false
+	DEATH_HIT_BOX.disabled = state
+	dashing = state
+
+func set_velocity(target_velocity, acceleration, delta) -> void:
+	velocity = velocity.linear_interpolate(target_velocity, acceleration * delta)
 
 func disable_dash() -> void:
 	dash_timeout = true
@@ -94,9 +95,6 @@ func set_dash_timeout(time: float) -> void:
 
 func enable_dashing() -> void:
 	dash_timeout = false
-
-func set_velocity(target_velocity, acceleration, delta) -> void:
-	velocity = velocity.linear_interpolate(target_velocity, acceleration * delta)
 
 func die() -> void:
 	DEATH_SOUND.play()
