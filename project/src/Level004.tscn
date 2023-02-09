@@ -37,7 +37,7 @@ resource_local_to_scene = true
 [node name="GoalManager" parent="." index="2"]
 next_level = "Level005.tscn"
 
-[node name="MovedDice" parent="GoalManager" index="0"]
+[node name="MovedDice" parent="GoalManager/Goals" index="0"]
 position = Vector2( 128, 64 )
 
 [node name="Holes" parent="." index="3"]
