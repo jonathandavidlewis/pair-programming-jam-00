@@ -48,7 +48,7 @@ text = "This is placeholder text."
 
 [node name="GoalManager" parent="." instance=ExtResource( 3 )]
 
-[node name="MovedDice" parent="GoalManager" instance=ExtResource( 5 )]
+[node name="MovedDice" parent="GoalManager/Goals" instance=ExtResource( 5 )]
 position = Vector2( 100, 47 )
 
 [node name="Sprite" type="Sprite" parent="."]
