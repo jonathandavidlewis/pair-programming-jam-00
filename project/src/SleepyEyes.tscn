@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/SleepyEyes.gd" type="Script" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "SleepyEyeMovement"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("TopEyelid:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 2.5, 2.8, 3.6, 4.8 ),
+"transitions": PoolRealArray( 1, 1, 7.72749, 1, 1, 7.72749 ),
+"update": 0,
+"values": [ Vector2( 0, -200 ), Vector2( 0, -200 ), Vector2( 0, -120 ), Vector2( 0, -200 ), Vector2( 0, -200 ), Vector2( 0, -80 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BottomEyelid:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 2.5, 2.8, 3.6, 4.8 ),
+"transitions": PoolRealArray( 1, 1, 7.7, 1, 1, 7.7 ),
+"update": 0,
+"values": [ Vector2( 0, 240 ), Vector2( 0, 240 ), Vector2( 0, 160 ), Vector2( 0, 240 ), Vector2( 0, 240 ), Vector2( 0, 120 ) ]
+}
+
+[node name="SleepyEyes" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 120.0 ]
+}
+
+[node name="EyeLids" type="Node2D" parent="."]
+
+[node name="TopEyelid" type="ColorRect" parent="EyeLids"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_top = -166.667
+margin_right = 256.0
+margin_bottom = 33.3333
+color = Color( 0, 0, 0, 1 )
+
+[node name="BottomEyelid" type="ColorRect" parent="EyeLids"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_top = 206.667
+margin_right = 256.0
+margin_bottom = 406.658
+color = Color( 0, 0, 0, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="EyeLids"]
+autoplay = "SleepyEyeMovement"
+anims/SleepyEyeMovement = SubResource( 1 )
+
+[connection signal="animation_finished" from="EyeLids/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
