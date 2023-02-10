@@ -9,7 +9,7 @@ export(float) var DASH_DURRATION := 0.3
 
 var velocity := Vector2()
 var can_move := true
-var dash_timeout := false
+var dash_timeout := true
 var dashing := false
 
 onready var DEATH_HIT_BOX = $Area2D/CollisionPolygon2D
@@ -34,6 +34,10 @@ func _physics_process(delta: float) -> void:
 func _on_Area2D_area_entered(area:Area2D) -> void:
 	if area.is_in_group("Death"):
 		die()
+	
+	if area.is_in_group("Pickup") and area.name == "DashPickup":
+		enable_dash()
+		print("dash enabled")
 
 func get_input_abilities() -> String:
 	if Input.is_action_just_pressed("ui_accept"):
@@ -88,12 +92,12 @@ func set_dash_durration(time: float, call_back: String, call_back_arg: Array) ->
 func set_dash_timeout(time: float) -> void:
 	var dash_timer = Timer.new()
 	dash_timer.wait_time = time
-	dash_timer.connect("timeout", self, "enable_dashing")
+	dash_timer.connect("timeout", self, "enable_dash")
 	dash_timer.one_shot = true
 	add_child(dash_timer)
 	dash_timer.start()
 
-func enable_dashing() -> void:
+func enable_dash() -> void:
 	dash_timeout = false
 
 func die() -> void:
