@@ -22,7 +22,7 @@ LevelManager="*res://src/LevelManager.gd"
 [display]
 
 window/size/width=256
-window/size/height=240
+window/size/height=224
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
