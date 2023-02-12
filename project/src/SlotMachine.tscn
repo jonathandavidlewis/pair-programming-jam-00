@@ -14,7 +14,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 margin_right = 256.0
 margin_bottom = 240.0
-color = Color( 0.0980392, 0.0980392, 0.0980392, 1 )
+color = Color( 0, 0.501961, 0, 1 )
 
 [node name="Wheel1" parent="." instance=ExtResource( 1 )]
 position = Vector2( 44, 46 )
@@ -33,7 +33,7 @@ anchor_bottom = 0.5
 margin_top = -20.0
 margin_right = 256.0
 margin_bottom = 60.0
-color = Color( 0.0980392, 0.0980392, 0.0980392, 1 )
+color = Color( 0, 0, 0, 1 )
 
 [node name="SlotForegroundBottom" type="ColorRect" parent="."]
 anchor_left = 0.5
@@ -43,4 +43,4 @@ anchor_bottom = 0.5
 margin_top = 180.0
 margin_right = 256.0
 margin_bottom = 280.0
-color = Color( 0.0980392, 0.0980392, 0.0980392, 1 )
+color = Color( 0, 0, 0, 1 )

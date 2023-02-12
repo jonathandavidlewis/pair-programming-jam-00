@@ -9,13 +9,11 @@
 [ext_resource path="res://asset/audio/background-music-adventure-theme.mp3" type="AudioStream" id=7]
 [ext_resource path="res://asset/audio/level-complete.wav" type="AudioStream" id=8]
 
-[sub_resource type="Gradient" id=1]
-colors = PoolColorArray( 0.172256, 0.621094, 0.220346, 1, 0.0306091, 0.460938, 0.0767157, 0.74902 )
+[sub_resource type="Gradient" id=6]
+colors = PoolColorArray( 0, 0.501961, 0, 1, 0, 0.501961, 0, 1 )
 
-[sub_resource type="GradientTexture2D" id=2]
-gradient = SubResource( 1 )
-fill_from = Vector2( 0.1375, 0.1 )
-fill_to = Vector2( 0.575, 0.745833 )
+[sub_resource type="GradientTexture" id=7]
+gradient = SubResource( 6 )
 
 [sub_resource type="TileSet" id=5]
 0/name = "hole.png 0"
@@ -38,7 +36,7 @@ fill_to = Vector2( 0.575, 0.745833 )
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 129, 121 )
 z_index = -10
-texture = SubResource( 2 )
+texture = SubResource( 7 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 240 )
 

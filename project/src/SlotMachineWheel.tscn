@@ -49,9 +49,6 @@ position = Vector2( 0, -436 )
 material = SubResource( 1 )
 position = Vector2( 0, 112 )
 texture = ExtResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="WheelPart2" type="Sprite" parent="WheelPartContainer"]
 material = SubResource( 1 )
