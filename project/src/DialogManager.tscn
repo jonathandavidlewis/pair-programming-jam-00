@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/GameDialog.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/DialogManager.gd" type="Script" id=2]
+[ext_resource path="res://asset/ui-theme.tres" type="Theme" id=3]
+[ext_resource path="res://src/GameOver.tscn" type="PackedScene" id=4]
 
 [sub_resource type="GDScript" id=3]
 script/source = "extends Node
@@ -37,9 +39,11 @@ margin_right = 81.0
 margin_bottom = 43.0
 rect_pivot_offset = Vector2( 70, 35 )
 rect_clip_content = true
+theme = ExtResource( 3 )
 
 [node name="Dialog" type="Control" parent="PopupDialog"]
 visible = false
+theme = ExtResource( 3 )
 script = SubResource( 3 )
 
 [node name="LevelComplete" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
@@ -49,6 +53,11 @@ text = "It looks like you're stuck!"
 
 [node name="DialogContainer" parent="PopupDialog" instance=ExtResource( 1 )]
 margin_bottom = 51.0
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 0.666667, 1 )
 text = "This is placeholder text."
+
+[node name="GameOver" parent="." instance=ExtResource( 4 )]
+visible = false
 
 [connection signal="popup_hide" from="PopupDialog" to="." method="_on_popup_hidden"]

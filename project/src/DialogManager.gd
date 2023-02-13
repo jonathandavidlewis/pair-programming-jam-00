@@ -1,5 +1,6 @@
 extends Node
 
+onready var GAME_OVER = $GameOver
 onready var DIALOG_POPUP = $PopupDialog
 onready var DIALOG_CONTAINER = DIALOG_POPUP.get_node("DialogContainer")
 onready var DIALOG_LIST_NODE = DIALOG_POPUP.get_node("Dialog")
@@ -11,6 +12,7 @@ var on_close_signal_name = ""
 
 func _ready():
 	Signals.connect("all_goals_completed", self, "_on_all_goals_completed")
+	Signals.connect("player_died", self, "_on_player_died")
 	open_dialog("ItLooksLikeUrStuck")
 
 func _input(event):
@@ -24,6 +26,9 @@ func _on_all_goals_completed():
 
 func _on_popup_hidden():
 	close_dialog()	
+
+func _on_player_died():
+	GAME_OVER.show()
 
 func open_dialog(name = "LevelComplete", on_close_signal = ""):
 	on_close_signal_name = on_close_signal
