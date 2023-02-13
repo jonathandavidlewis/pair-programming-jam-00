@@ -127,5 +127,6 @@ func die() -> void:
 	DEATH_SOUND.play()
 	self.can_move = false
 	self.visible = false
+	Signals.emit_signal("player_died")
 	yield(get_tree().create_timer(0.62), "timeout")
 	Signals.emit_signal("level_failed")
