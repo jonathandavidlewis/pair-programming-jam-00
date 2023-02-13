@@ -43,9 +43,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_top = -166.667
+margin_top = -200.0
 margin_right = 256.0
-margin_bottom = 33.3333
+margin_bottom = 0.000305176
 color = Color( 0, 0, 0, 1 )
 
 [node name="BottomEyelid" type="ColorRect" parent="EyeLids"]
@@ -53,13 +53,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_top = 206.667
+margin_top = 240.0
 margin_right = 256.0
-margin_bottom = 406.658
+margin_bottom = 439.991
 color = Color( 0, 0, 0, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="EyeLids"]
-autoplay = "SleepyEyeMovement"
 anims/SleepyEyeMovement = SubResource( 1 )
 
 [connection signal="animation_finished" from="EyeLids/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
