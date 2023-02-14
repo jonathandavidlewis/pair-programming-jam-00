@@ -9,7 +9,6 @@ onready var dialogs = create_dialogs_dict(dialog_nodes)
 onready var level = get_parent().get_node("GoalManager").next_level
 var on_close_signal_name = ""
 
-
 func _ready():
 	Signals.connect("all_goals_completed", self, "_on_all_goals_completed")
 	Signals.connect("player_died", self, "_on_player_died")
@@ -33,10 +32,17 @@ func open_dialog(name = "LevelComplete", on_close_signal = ""):
 	print(DIALOG_CONTAINER)
 	DIALOG_CONTAINER.text = dialogs[name]
 	DIALOG_POPUP.popup()
-		
+
+func open_dialogs(names = []):
+	for name in names:
+		open_dialog(name)
+		yield(DIALOG_POPUP, "popup_hide")
+	
 func close_dialog():
 	get_tree().paused = false
 	DIALOG_POPUP.visible = false
+	if on_close_signal_name == "":
+		return
 	if on_close_signal_name != "level_completed":
 		Signals.emit_signal(on_close_signal_name)
 	else:
