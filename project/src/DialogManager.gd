@@ -13,15 +13,12 @@ var on_close_signal_name = ""
 func _ready():
 	Signals.connect("all_goals_completed", self, "_on_all_goals_completed")
 	Signals.connect("player_died", self, "_on_player_died")
-	open_dialog("ItLooksLikeUrStuck")
 
 func _input(event):
 	if DIALOG_POPUP.visible and event.is_action_pressed("ui_accept"):
 		close_dialog()
 
 func _on_all_goals_completed():
-	# TODO: actually completele level??
-	# open dialog on level complete!!
 	open_dialog("LevelComplete", "level_completed")
 
 func _on_popup_hidden():
@@ -44,9 +41,6 @@ func close_dialog():
 		Signals.emit_signal(on_close_signal_name)
 	else:
 		Signals.emit_signal(on_close_signal_name, level)
-				
-func show_end_level():
-	open_dialog("LevelComplete")
 
 func create_dialogs_dict(dialogs) -> Dictionary:
 	var dialogs_dict = {}
