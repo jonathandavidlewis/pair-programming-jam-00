@@ -92,6 +92,22 @@ margin_right = 153.0
 margin_bottom = 75.0
 text = "Do you remember how to move down?"
 
+[node name="OhYeah" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+visible = false
+margin_left = 9.0
+margin_top = 11.0
+margin_right = 153.0
+margin_bottom = 75.0
+text = "Oh yeah... forgot to mention..."
+
+[node name="DeathHoles" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+visible = false
+margin_left = 9.0
+margin_top = 11.0
+margin_right = 153.0
+margin_bottom = 75.0
+text = "...When you fall into holes, you die."
+
 [node name="DialogContainer" parent="PopupDialog" instance=ExtResource( 1 )]
 margin_bottom = 51.0
 theme = ExtResource( 3 )
