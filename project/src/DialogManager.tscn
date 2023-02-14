@@ -1,28 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/GameDialog.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/DialogManager.gd" type="Script" id=2]
 [ext_resource path="res://asset/ui-theme.tres" type="Theme" id=3]
 [ext_resource path="res://src/GameOver.tscn" type="PackedScene" id=4]
-
-[sub_resource type="GDScript" id=3]
-script/source = "extends Node
-
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = \"text\"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-"
 
 [node name="DialogManager" type="Node"]
 pause_mode = 2
@@ -42,14 +23,90 @@ rect_clip_content = true
 theme = ExtResource( 3 )
 
 [node name="Dialog" type="Control" parent="PopupDialog"]
-visible = false
 theme = ExtResource( 3 )
-script = SubResource( 3 )
 
 [node name="LevelComplete" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+visible = false
 
 [node name="ItLooksLikeUrStuck" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
-text = "It looks like you're stuck!"
+visible = false
+margin_left = 9.0
+margin_top = 11.0
+margin_right = 153.0
+margin_bottom = 75.0
+text = "It looks like your stuck."
+
+[node name="SToMove" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+visible = false
+margin_left = 9.0
+margin_top = 11.0
+margin_right = 153.0
+margin_bottom = 75.0
+text = "You can Press [S] to move down."
+
+[node name="WToMove" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+visible = false
+margin_left = 9.0
+margin_top = 11.0
+margin_right = 153.0
+margin_bottom = 75.0
+text = "You can Press [W] to move up."
+
+[node name="AToMove" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+visible = false
+margin_left = 9.0
+margin_top = 11.0
+margin_right = 153.0
+margin_bottom = 75.0
+text = "You can Press [A] to move Left."
+
+[node name="DToMove" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+visible = false
+margin_left = 9.0
+margin_top = 11.0
+margin_right = 153.0
+margin_bottom = 75.0
+text = "You can Press [D] to move East."
+
+[node name="SpaceToClose" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+visible = false
+margin_left = 9.0
+margin_top = 11.0
+margin_right = 153.0
+margin_bottom = 75.0
+text = "You can Press [SPACE] to close dialogs..."
+
+[node name="Sorry" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+visible = false
+margin_left = 9.0
+margin_top = 11.0
+margin_right = 153.0
+margin_bottom = 75.0
+text = "...Sorry I forgot to tell you that before. "
+
+[node name="RememberHowMove" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+visible = false
+margin_left = 9.0
+margin_top = 11.0
+margin_right = 153.0
+margin_bottom = 75.0
+text = "Do you remember how to move down?"
+
+[node name="OhYeah" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+visible = false
+margin_left = 9.0
+margin_top = 11.0
+margin_right = 153.0
+margin_bottom = 75.0
+text = "Oh yeah... forgot to mention..."
+
+[node name="DeathHoles" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+visible = false
+margin_left = 9.0
+margin_top = 11.0
+margin_right = 153.0
+margin_bottom = 75.0
+text = "...When you fall into holes, you die."
 
 [node name="DialogContainer" parent="PopupDialog" instance=ExtResource( 1 )]
 margin_bottom = 51.0
