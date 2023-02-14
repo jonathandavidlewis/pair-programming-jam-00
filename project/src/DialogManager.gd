@@ -33,10 +33,11 @@ func open_dialog(name = "LevelComplete", on_close_signal = ""):
 	DIALOG_CONTAINER.text = dialogs[name]
 	DIALOG_POPUP.popup()
 
-func open_dialogs(names = []):
+func open_dialogs(names = [], on_end_signal = ""):
 	for name in names:
 		open_dialog(name)
 		yield(DIALOG_POPUP, "popup_hide")
+	Signals.emit_signal(on_end_signal)
 	
 func close_dialog():
 	get_tree().paused = false

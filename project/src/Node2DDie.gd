@@ -22,3 +22,12 @@ func _on_Area2D_area_entered(area:Area2D) -> void:
 
 func disable_colider() -> void:
 	COLLIDER.disabled = true
+
+func hide() -> void:
+	.hide()
+	disable_colider()
+
+func show() -> void:
+	.show()
+	COLLIDER.disabled = false
+	
