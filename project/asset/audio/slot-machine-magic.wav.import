@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/slot-machine-magic.wav-f64e6a1bf32cdeaa6376ac814f30138d.sample"
+
+[deps]
+
+source_file="res://asset/audio/slot-machine-magic.wav"
+dest_files=[ "res://.import/slot-machine-magic.wav-f64e6a1bf32cdeaa6376ac814f30138d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=3
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
