@@ -28,6 +28,10 @@ theme = ExtResource( 3 )
 [node name="LevelComplete" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
 visible = false
 
+[node name="Silent" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+visible = false
+text = "..."
+
 [node name="ItLooksLikeUrStuck" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
 visible = false
 margin_left = 9.0
@@ -92,29 +96,141 @@ margin_right = 153.0
 margin_bottom = 75.0
 text = "Do you remember how to move down?"
 
-[node name="OhYeah" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+[node name="Capulet" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
 visible = false
 margin_left = 9.0
 margin_top = 11.0
 margin_right = 153.0
 margin_bottom = 75.0
-text = "Oh yeah... forgot to mention..."
+text = "As rich shall Romeo's by his lady's lie!"
 
-[node name="DeathHoles" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+[node name="Juliet" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
 visible = false
 margin_left = 9.0
 margin_top = 11.0
 margin_right = 153.0
 margin_bottom = 75.0
-text = "...When you fall into holes, you die."
+text = "O happy dagger..."
 
-[node name="SorryDice" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+[node name="Respawn" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
 visible = false
 margin_left = 9.0
 margin_top = 11.0
 margin_right = 153.0
 margin_bottom = 75.0
-text = "...Oh, and you'll need one of these..."
+text = "...Oh, your alive!"
+
+[node name="TakeThis" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+visible = false
+margin_left = 9.0
+margin_top = 11.0
+margin_right = 153.0
+margin_bottom = 75.0
+text = "We better fill those holes. You'll need this."
+
+[node name="YouCan" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+visible = false
+margin_left = 9.0
+margin_top = 11.0
+margin_right = 153.0
+margin_bottom = 75.0
+text = "You can figure this out, right?"
+
+[node name="IfDash" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+visible = false
+margin_left = 9.0
+margin_top = 11.0
+margin_right = 153.0
+margin_bottom = 75.0
+text = "If you knew how to dash..."
+
+[node name="SpaceToDash" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+visible = false
+margin_left = 9.0
+margin_top = 11.0
+margin_right = 153.0
+margin_bottom = 75.0
+text = "...You could press [Space] to Dash..."
+
+[node name="YouDont" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+visible = false
+margin_left = 9.0
+margin_top = 11.0
+margin_right = 153.0
+margin_bottom = 75.0
+text = "But you don't know how to dash."
+
+[node name="Wierd" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+visible = false
+margin_left = 9.0
+margin_top = 11.0
+margin_right = 153.0
+margin_bottom = 75.0
+text = "Wierd... The die is on the wrong side."
+
+[node name="CodingIsHard" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+visible = false
+margin_left = 9.0
+margin_top = 11.0
+margin_right = 153.0
+margin_bottom = 75.0
+text = "Coding is Hard."
+
+[node name="WantToLeave" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+visible = false
+margin_left = 9.0
+margin_top = 11.0
+margin_right = 153.0
+margin_bottom = 75.0
+text = "You don't really want to leave anyway... right?"
+
+[node name="DontLeave" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+visible = false
+margin_left = 9.0
+margin_top = 11.0
+margin_right = 153.0
+margin_bottom = 75.0
+text = "Don't leave......."
+
+[node name="NotCherries" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+visible = false
+margin_left = 9.0
+margin_top = 11.0
+margin_right = 153.0
+margin_bottom = 75.0
+text = "Those cherries won't save you."
+
+[node name="DontGo" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+visible = false
+margin_left = 9.0
+margin_top = 11.0
+margin_right = 153.0
+margin_bottom = 75.0
+text = "Don't Leave Me..."
+
+[node name="Wolves" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+visible = false
+margin_left = 9.0
+margin_top = 11.0
+margin_right = 153.0
+margin_bottom = 75.0
+text = "THEY just threw you to the wolves..."
+
+[node name="Stay" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+visible = false
+margin_left = 9.0
+margin_top = 11.0
+margin_right = 153.0
+margin_bottom = 75.0
+text = "Stay here with me."
+
+[node name="WakeUp" parent="PopupDialog/Dialog" instance=ExtResource( 1 )]
+visible = false
+margin_left = 9.0
+margin_top = 11.0
+margin_right = 153.0
+margin_bottom = 75.0
+text = "W A K E U P !"
 
 [node name="DialogContainer" parent="PopupDialog" instance=ExtResource( 1 )]
 margin_bottom = 51.0
