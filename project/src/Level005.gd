@@ -11,9 +11,10 @@ func _ready() -> void:
 	DICE_NODE.hide()
 	Signals.connect("goal_completed", self, "_on_goal_completed")
 	Signals.connect("dialog_finished", self, "_on_dialog_finished")
-	DIALOG_MANAGER.open_dialogs(["OhYeah", "DeathHoles"], "dialog_finished")
+	DIALOG_MANAGER.open_dialogs(["Capulet", "Juliet", "Respawn"], "dialog_finished")
 
 func _on_dialog_finished():
 	yield(get_tree().create_timer(DICE_WAIT_TIME_SECONDS), "timeout")
-	DIALOG_MANAGER.open_dialog("SorryDice")
+	DIALOG_MANAGER.open_dialog("TakeThis")
+	yield(get_tree().create_timer(0.5), "timeout")
 	DICE_NODE.show()
